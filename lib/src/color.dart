@@ -36,8 +36,16 @@ extension FancyColor on Color {
   Brightness get estimatedBrightness =>
       ThemeData.estimateBrightnessForColor(this);
 
+  /// `true` if the [estimatedBrightness] is [Brightness.dark], `false`
+  /// otherwise.
+  bool get isDark => estimatedBrightness.isDark;
+
+  /// `true` if the [estimatedBrightness] is [Brightness.light], `false`
+  /// otherwise.
+  bool get isLight => estimatedBrightness.isLight;
+
   /// A pure [Color] contrasting with this one (i.e., [Colors.black] or
-  /// [Colors.white]), depending on the estimated [Brightness].
+  /// [Colors.white]), depending on the [estimatedBrightness].
   Color get contrastColor => estimatedBrightness.contrastColor;
 
   /// The [SystemUiOverlayStyle] providing the most contrast on this color.
@@ -79,18 +87,28 @@ extension FancyThemeData on ThemeData {
 }
 
 extension RandomColor on Random {
-  /// Generates a random [Color] with uniformly distributed R, G & B values.
+  /// Generates a random [Color] with uniformly distributed red, green & blue
+  /// values.
   ///
-  /// You can optionally specify either [alpha] or [opacity] of the generated
-  /// color.
-  Color nextColor({int alpha, double opacity}) {
+  /// You can optionally specify some components of the generated [Color]:
+  /// - [red], [green] or [blue]
+  /// - either [alpha] or [opacity]
+  Color nextColor({
+    int red,
+    int green,
+    int blue,
+    int alpha,
+    double opacity,
+  }) {
     assert(
       alpha == null || opacity == null,
       'You cannot specify both alpha and opacity.',
     );
-    final r = nextInt(_channelMax);
-    final g = nextInt(_channelMax);
-    final b = nextInt(_channelMax);
+
+    final r = red ?? nextInt(_channelMax);
+    final g = green ?? nextInt(_channelMax);
+    final b = blue ?? nextInt(_channelMax);
+
     if (opacity != null) {
       return Color.fromRGBO(r, g, b, opacity);
     }
