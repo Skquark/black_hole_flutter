@@ -6,10 +6,12 @@
   - [🌈 Material Design colors](#-material-design-colors)
 - [🧭 Navigation](#-navigation)
 - [📱 Widgets](#-widgets)
-- [🔳 Buttons](#-buttons)
+  - [🔳 Buttons](#-buttons)
   - [🥔 ChipGroup](#-chipgroup)
   - [🥙 FillOrWrap](#-fillorwrap)
   - [↔ SeparatedButtons](#-separatedbuttons)
+  - [📚 TitleAndSubtitle](#-titleandsubtitle)
+- [🖼 RenderObject](#-renderobject)
 - [↕ Size](#-size)
 
 
@@ -30,23 +32,29 @@ Also, this package adds a custom [`FancyBottomSheet`] with a drag indicator at t
 
 In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(context)`][`Theme.of`]). This package adds extension getters on [`BuildContext`] for those classes so you can just say:
 
-| Extension                    | Shortcut for                   |
-| ---------------------------- | ------------------------------ |
-| [`context.defaultTextStyle`] | `DefaultTextStyle.of(context)` |
-| [`context.directionality`]   | `Directionality.of(context)`   |
-| [`context.form`]             | `Form.of(context)`             |
-| [`context.mediaQuery`]       | `MediaQuery.of(context)`       |
-| [`context.pageStorage`]      | `PageStorage.of(context)`      |
-| [`context.scaffold`]         | `Scaffold.of(context)`         |
-| [`context.textTheme`]        | `Theme.of(context).textTheme`  |
-| [`context.theme`]            | `Theme.of(context)`            |
+| Extension                         | Shortcut for                         |
+| --------------------------------- | ------------------------------------ |
+| [`context.defaultTextStyle`]      | `DefaultTextStyle.of(context)`       |
+| [`context.directionality`]        | `Directionality.of(context)`         |
+| [`context.form`]                  | `Form.of(context)`                   |
+| [`context.locale`]                | `Localizations.localeOf(context)`    |
+| [`context.materialLocalizations`] | `MaterialLocalizations.of(context)`  |
+| [`context.mediaQuery`]            | `MediaQuery.of(context)`             |
+| [`context.pageStorage`]           | `PageStorage.of(context)`            |
+| [`context.scaffold`]              | `Scaffold.of(context)`               |
+| [`context.scaffoldOrNull`]        | `Scaffold.of(context, nullOk: true)` |
+| [`context.textTheme`]             | `Theme.of(context).textTheme`        |
+| [`context.theme`]                 | `Theme.of(context)`                  |
 
 [`context.defaultTextStyle`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/defaultTextStyle.html
 [`context.directionality`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/directionality.html
 [`context.form`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/form.html
+[`context.locale`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/locale.html
+[`context.materialLocalizations`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/materialLocalizations.html
 [`context.mediaQuery`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/mediaQuery.html
 [`context.pageStorage`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/pageStorage.html
 [`context.scaffold`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/scaffold.html
+[`context.scaffoldOrNull`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/scaffoldOrNull.html
 [`context.textTheme`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/textTheme.html
 [`context.theme`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/theme.html
 
@@ -70,6 +78,7 @@ Handy extensions on [`Color`]:
 | Extension                                       | Explanation                                                     |
 | ----------------------------------------------- | --------------------------------------------------------------- |
 | [`color.estimatedBrightness`]                   | estimated [`Brightness`] based on `color`'s luminance           |
+| [`color.isOpaque`]                              | if opacity is `1.0`                                             |
 | [`color.alphaBlendOn(Color background)`]        | resulting [`Color`] when drawing `color` on top of `background` |
 | [`color.withAdditionalOpacity(double opacity)`] | applies `opacity` by multiplying it to the existing opacity     |
 | [`color.withAdditionalAlpha(int alpha)`]        | like above, but with an integer alpha                           |
@@ -78,6 +87,8 @@ Handy extensions on [`Color`]:
 
 And if you can't decide on a color, just use [`random.nextColor()`]!
 
+Convert between alpha and opacity with `int.alphaToOpacity` & `double.opacityToAlpha`.
+
 [`brightness.isDark`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/isDark.html
 [`brightness.isLight`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/isLight.html
 [`brightness.opposite`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/opposite.html
@@ -85,6 +96,7 @@ And if you can't decide on a color, just use [`random.nextColor()`]!
 [`brightness.contrastColor`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/contrastColor.html
 [`color.alphaBlendOn(Color background)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/alphaBlendOn.html
 [`color.estimatedBrightness`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/estimatedBrightness.html
+[`color.isOpaque`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/isOpaque.html
 [`color.hsl`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/hsl.html
 [`color.hsv`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/hsv.html
 [`color.withAdditionalOpacity(double opacity)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalOpacity.html
@@ -141,7 +153,7 @@ MaterialApp(
 
 ## 📱 Widgets
 
-## 🔳 Buttons
+### 🔳 Buttons
 
 Did you ever want to show a [progress indicator][`ProgressIndicator`] inside a button? Or were annoyed to conditionally set a [Button][`MaterialButton`]'s [`onPressed`][`MaterialButton.onPressed`] to disable it? Fear no more — <kbd>black_hole_flutter</kbd> has got you covered!
 
@@ -184,15 +196,46 @@ A layout with two different behaviors:
 A container wrapping multiple buttons with an interpunct (`·`) between each one. It's recommended to use [`FlatButton`]s as children.
 
 
+### 📚 TitleAndSubtitle
+
+Did you ever want to show a subtitle (in addition to a main title) in your `AppBar`? Use [`TitleAndSubtitle`] (very creative name, I know):
+
+```dart
+AppBar(
+  title: TitleAndSubtitle(
+    title: Text('My title'),
+    subtitle: Text('My optional subtitle'),
+  ),
+)
+```
+
+[`TitleAndSubtitle`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFab-class.html
+
+
+## 🖼 RenderObject
+
+When writing a custom layout, you might find this extension on [`ContainerRenderObjectMixin`] useful:
+
+| Extension                               | Explanation                                              |
+| --------------------------------------- | -------------------------------------------------------- |
+| [`containerRenderObjectMixin.children`] | Returns all children using `firstChild` and `childAfter` |
+
+[`containerRenderObjectMixin.children`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/ContainerRenderObjectMixinBlackHole/children.html
+
+
 ## ↕ Size
 
-| Extension                | Explanation                                              |
-| ------------------------ | -------------------------------------------------------- |
-| [`size.diagonal`]        | length of the diagonal of a rectangle with this [`Size`] |
-| [`size.squaredDiagonal`] | ≙ `size.diagonal * size.diagonal`                        |
+| Extension                            | Explanation                                              |
+| ------------------------------------ | -------------------------------------------------------- |
+| [`size.diagonal`]                    | length of the diagonal of a rectangle with this [`Size`] |
+| [`size.squaredDiagonal`]             | ≙ `size.diagonal * size.diagonal`                        |
+| [`size.coerceAtLeast(Size minimum)`] | Ensures `size` is not smaller than `minimum` in any axis |
+| [`size.coerceAtMost(Size maximum)`]  | Ensures `size` is not larger than `minimum` in any axis  |
 
 [`size.diagonal`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/diagonal.html
 [`size.squaredDiagonal`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/squaredDiagonal.html
+[`size.coerceAtLeast(Size minimum)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/coerceAtLeast.html
+[`size.coerceAtMost(Size maximum)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/coerceAtMost.html
 
 
 [<kbd>🧭 flutter_deep_linking</kbd>]: https://pub.dev/packages/flutter_deep_linking
@@ -203,6 +246,7 @@ A container wrapping multiple buttons with an interpunct (`·`) between each one
 [`Color`]: https://api.flutter.dev/flutter/dart-ui/Color-class.html
 [`Colors`]: https://api.flutter.dev/flutter/material/Colors-class.html
 [`Column`]: https://api.flutter.dev/flutter/widgets/Column-class.html
+[`ContainerRenderObjectMixin`]: https://api.flutter.dev/flutter/rendering/ContainerRenderObjectMixin-mixin.html
 [`Expanded`]: https://api.flutter.dev/flutter/widgets/Expanded-class.html
 [`FlatButton`]: https://api.flutter.dev/flutter/material/FlatButton-class.html
 [`FloatingActionButton`]: https://api.flutter.dev/flutter/material/FloatingActionButton-class.html

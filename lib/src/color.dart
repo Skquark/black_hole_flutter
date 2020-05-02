@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // Maximum value per channel of a [Color].
-const _channelMax = (2 << 8) - 1;
+const _channelMax = (1 << 8) - 1;
 
 extension FancyBrightness on Brightness {
   /// `true` for [Brightness.dark], `false` otherwise.
@@ -51,6 +51,9 @@ extension FancyColor on Color {
   /// The [SystemUiOverlayStyle] providing the most contrast on this color.
   SystemUiOverlayStyle get contrastSystemUiOverlayStyle =>
       estimatedBrightness.contrastSystemUiOverlayStyle;
+
+  /// `true` if this color is fully opaque, i.e. has an [opacity] of `1.0`.
+  bool get isOpaque => alpha == _channelMax;
 
   /// Shortcut for `Color.alphaBlend(color, background)`.
   Color alphaBlendOn(Color background) => Color.alphaBlend(this, background);
@@ -114,4 +117,16 @@ extension RandomColor on Random {
     }
     return Color.fromARGB(alpha ?? nextInt(_channelMax), r, g, b);
   }
+}
+
+extension IntColorBlackHole on int {
+  /// Interprets this [int] as an alpha value (0 – 255) and converts it to an
+  /// opacity value (0 – 1).
+  double get alphaToOpacity => this / _channelMax;
+}
+
+extension DoubleColorBlackHole on double {
+  /// Interprets this [double] as an opacity value (0 – 1) and converts it to an
+  /// alpha value (0 – 255).
+  int get opacityToAlpha => this * _channelMax ~/ 1;
 }

@@ -15,7 +15,33 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.7...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.10...master)
+
+## [0.2.10](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.9...v0.2.10) · 2020-04-30
+
+### 🎉 New Features
+- **widgets:** add `TitleAndSubtitle`
+
+### 📦 Build & CI
+- update <kbd>dartx</kbd> to ^0.3.0
+
+
+## [0.2.9](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.8...v0.2.9) · 2020-04-29
+
+### 🎉 New Features
+- **color:** add `Color.isOpaque`
+- **color:** add `int.alphaToOpacity`, `double.opacityToAlpha`
+- **context:** add `BuildContext.materialLocalizations`
+- **context:** add `BuildContext.scaffoldOrNull`
+- **size:** add `Size.coerceAtLeast`, `Size.coerceAtMost`
+
+
+## [0.2.8](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.7...v0.2.8) · 2020-04-20
+
+### 🎉 New Features
+- **context:** add `BuildContext.locale`
+- **render_object:** add `ContainerRenderObjectMixin.children`
+
 
 ## [0.2.7](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.6...v0.2.7) · 2020-04-08
 
@@ -106,7 +132,6 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ## [0.1.0](https://github.com/JonasWanke/black_hole_flutter/compare/v0.0.1...v0.1.0) · 2020-03-13
 
 ### 🎉 New Features
-
 - add `Size.diagonal`, `Size.squaredDiagonal`
 - allow loading buttons without a `loadingChild`
 

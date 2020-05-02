@@ -10,6 +10,13 @@ extension FancyContext on BuildContext {
   /// Shortcut for `Form.of(context)`.
   FormState get form => Form.of(this);
 
+  /// Shortcut for `Localizations.localeOf(context)`.
+  Locale get locale => Localizations.localeOf(this);
+
+  /// Shortcut for `MaterialLocalizations.of(context)`.
+  MaterialLocalizations get materialLocalizations =>
+      MaterialLocalizations.of(this);
+
   /// Shortcut for `MediaQuery.of(context)`.
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
@@ -18,6 +25,9 @@ extension FancyContext on BuildContext {
 
   /// Shortcut for `Scaffold.of(context)`.
   ScaffoldState get scaffold => Scaffold.of(this);
+
+  /// Shortcut for `Scaffold.of(context, nullOk: true)`.
+  ScaffoldState get scaffoldOrNull => Scaffold.of(this, nullOk: true);
 
   /// Shortcut for `Theme.of(context)`.
   ThemeData get theme => Theme.of(this);
