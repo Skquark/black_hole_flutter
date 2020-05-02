@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dartx: ^0.4.0-dev.1
+  dartx:
+    git: https://github.com/leisim/dartx.git
   meta: ^1.1.8
 
 dev_dependencies:
