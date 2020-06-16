@@ -7,6 +7,9 @@ extension FancyContext on BuildContext {
   /// Shortcut for `Directionality.of(context)`.
   TextDirection get directionality => Directionality.of(this);
 
+  /// Shortcut for `FocusScope.of(context)`.
+  FocusScopeNode get focusScope => FocusScope.of(this);
+
   /// Shortcut for `Form.of(context)`.
   FormState get form => Form.of(this);
 
@@ -19,6 +22,9 @@ extension FancyContext on BuildContext {
 
   /// Shortcut for `MediaQuery.of(context)`.
   MediaQueryData get mediaQuery => MediaQuery.of(this);
+
+  /// Shortcut for `Overlay.of(context)`.
+  OverlayState get overlay => Overlay.of(this);
 
   /// Shortcut for `PageStorage.of(context)`.
   PageStorageBucket get pageStorage => PageStorage.of(this);

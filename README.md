@@ -40,6 +40,7 @@ In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(co
 | [`context.locale`]                | `Localizations.localeOf(context)`    |
 | [`context.materialLocalizations`] | `MaterialLocalizations.of(context)`  |
 | [`context.mediaQuery`]            | `MediaQuery.of(context)`             |
+| [`context.overlay`]               | `Overlay.of(context)`                |
 | [`context.pageStorage`]           | `PageStorage.of(context)`            |
 | [`context.scaffold`]              | `Scaffold.of(context)`               |
 | [`context.scaffoldOrNull`]        | `Scaffold.of(context, nullOk: true)` |
@@ -52,6 +53,7 @@ In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(co
 [`context.locale`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/locale.html
 [`context.materialLocalizations`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/materialLocalizations.html
 [`context.mediaQuery`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/mediaQuery.html
+[`context.overlay`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/overlay.html
 [`context.pageStorage`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/pageStorage.html
 [`context.scaffold`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/scaffold.html
 [`context.scaffoldOrNull`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/scaffoldOrNull.html
@@ -85,7 +87,7 @@ Handy extensions on [`Color`]:
 | [`color.hsl`]                                   | ≙ `HSLColor.fromColor(color)`                                   |
 | [`color.hsv`]                                   | ≙ `HSVColor.fromColor(color)`                                   |
 
-And if you can't decide on a color, just use [`random.nextColor()`]!
+And if you can't decide on a color, just use [`random.nextColor()`], [`random.nextColorHsl()`] or [`random.nextColorHsv()`]!
 
 Convert between alpha and opacity with `int.alphaToOpacity` & `double.opacityToAlpha`.
 
@@ -102,6 +104,8 @@ Convert between alpha and opacity with `int.alphaToOpacity` & `double.opacityToA
 [`color.withAdditionalOpacity(double opacity)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalOpacity.html
 [`color.withAdditionalAlpha(int alpha)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalAlpha.html
 [`random.nextColor()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColor.html
+[`random.nextColorHsl()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColorHsl.html
+[`random.nextColorHsv()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColorHsv.html
 
 
 ### 🌈 Material Design colors
