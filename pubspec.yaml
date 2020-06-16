@@ -1,16 +1,17 @@
 name: black_hole_flutter
 description: "🛠 A package absorbing all Flutter utility functions, including extension functions and commonly used widgets"
-version: 0.2.10
+version: 0.2.12
 homepage: https://github.com/JonasWanke/black_hole_flutter
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  dartx:
-    git: https://github.com/leisim/dartx.git
+
+  dartx: ^0.4.0
   meta: ^1.1.8
 
 dev_dependencies:
