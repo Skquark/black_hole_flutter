@@ -11,7 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  dartx: ^0.4.0
+  #dartx: ^0.4.0
+  dartx:
+    git: https://github.com/Skquark/dartx.git
   meta: ^1.1.8
 
 dev_dependencies:
