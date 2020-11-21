@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
+import '../color_material.dart';
 import '../context.dart';
 
 /// In addition to a normal [FlatButton], this [Widget] natively supports
@@ -18,17 +19,21 @@ class FancyFlatButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
+    ShapeBorder shape,
   }) : super(
           key: key,
           isEnabled: isEnabled,
           onPressed: onPressed,
           child: child,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   /// Creates a [FlatButton] with a leading icon.
@@ -44,8 +49,10 @@ class FancyFlatButton extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
+    ShapeBorder shape,
   })  : assert(icon != null),
         super(
           key: key,
@@ -54,9 +61,11 @@ class FancyFlatButton extends _FancyButton {
           icon: icon,
           child: label,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   @override
@@ -65,6 +74,7 @@ class FancyFlatButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      shape: shape,
       child: child,
     );
   }
@@ -75,6 +85,7 @@ class FancyFlatButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      shape: shape,
       icon: icon,
       label: actualChild,
     );
@@ -96,19 +107,23 @@ class FancyOutlineButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
     this.borderSide,
     this.highlightedBorderColor,
+    ShapeBorder shape,
   }) : super(
           key: key,
           isEnabled: isEnabled,
           onPressed: onPressed,
           child: child,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   /// Creates an [OutlineButton] with a leading icon.
@@ -124,10 +139,12 @@ class FancyOutlineButton extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
     this.borderSide,
     this.highlightedBorderColor,
+    ShapeBorder shape,
   })  : assert(icon != null),
         super(
           key: key,
@@ -136,9 +153,11 @@ class FancyOutlineButton extends _FancyButton {
           icon: icon,
           child: label,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   final BorderSide borderSide;
@@ -152,6 +171,7 @@ class FancyOutlineButton extends _FancyButton {
       color: color,
       borderSide: borderSide,
       highlightedBorderColor: highlightedBorderColor,
+      shape: shape,
       child: child,
     );
   }
@@ -164,6 +184,7 @@ class FancyOutlineButton extends _FancyButton {
       color: color,
       borderSide: borderSide,
       highlightedBorderColor: highlightedBorderColor,
+      shape: shape,
       icon: icon,
       label: actualChild,
     );
@@ -185,17 +206,21 @@ class FancyRaisedButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
+    ShapeBorder shape,
   }) : super(
           key: key,
           isEnabled: isEnabled,
           onPressed: onPressed,
           child: child,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   /// Creates a [RaisedButton] with a leading icon.
@@ -211,8 +236,10 @@ class FancyRaisedButton extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
+    ShapeBorder shape,
   })  : assert(icon != null),
         super(
           key: key,
@@ -221,9 +248,11 @@ class FancyRaisedButton extends _FancyButton {
           icon: icon,
           child: label,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   @override
@@ -232,6 +261,7 @@ class FancyRaisedButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      shape: shape,
       child: child,
     );
   }
@@ -242,6 +272,7 @@ class FancyRaisedButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      shape: shape,
       icon: icon,
       label: actualChild,
     );
@@ -263,15 +294,20 @@ class FancyFab extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color color,
-  }) : super(
+    ShapeBorder shape,
+  })  : reverseChildren = false,
+        super(
           key: key,
           isEnabled: isEnabled,
           onPressed: onPressed,
           child: child,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           color: color,
+          shape: shape,
         );
 
   /// Creates an extended [FloatingActionButton].
@@ -287,8 +323,12 @@ class FancyFab extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color backgroundColor,
+    ShapeBorder shape,
+    this.reverseChildren = false,
   })  : assert(icon != null),
+        assert(reverseChildren != null),
         super(
           key: key,
           isEnabled: isEnabled,
@@ -296,9 +336,13 @@ class FancyFab extends _FancyButton {
           icon: icon,
           child: label,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           color: backgroundColor,
+          shape: shape,
         );
+
+  final bool reverseChildren;
 
   @override
   double get loadingIndicatorSize => 24;
@@ -309,7 +353,8 @@ class FancyFab extends _FancyButton {
       onPressed: actualOnPressed,
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
-      child: isLoading ? _LoadingIndicator(loadingIndicatorSize) : child,
+      shape: shape,
+      child: isLoading ? actualLoadingIndicator : child,
     );
   }
 
@@ -325,8 +370,14 @@ class FancyFab extends _FancyButton {
       onPressed: actualOnPressed,
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
-      icon: icon,
-      label: actualChild,
+      shape: shape,
+      icon: reverseChildren ? null : icon,
+      label: reverseChildren
+          ? Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [actualChild, SizedBox(width: 8), icon],
+            )
+          : actualChild,
     );
   }
 
@@ -334,7 +385,7 @@ class FancyFab extends _FancyButton {
     if (isActuallyEnabled) {
       return null;
     }
-    return context.theme.disabledColor;
+    return _backgroundColor(context).disabledOnColor;
   }
 
   Color _backgroundColor(BuildContext context) {
@@ -360,9 +411,11 @@ abstract class _FancyButton extends StatelessWidget {
     this.isEnabled,
     @required this.onPressed,
     this.isLoading = false,
+    this.loadingIndicator,
     this.loadingChild,
     this.textColor,
     this.color,
+    this.shape,
     this.icon,
     @required this.child,
   })  : assert(!(isEnabled == true && onPressed == null),
@@ -378,6 +431,9 @@ abstract class _FancyButton extends StatelessWidget {
   VoidCallback get actualOnPressed => isActuallyEnabled ? onPressed : null;
 
   final bool isLoading;
+  final Widget loadingIndicator;
+  Widget get actualLoadingIndicator =>
+      loadingIndicator ?? _LoadingIndicator(loadingIndicatorSize);
 
   final Widget loadingChild;
   Widget get actualLoadingChild => loadingChild ?? child;
@@ -387,6 +443,7 @@ abstract class _FancyButton extends StatelessWidget {
 
   final Color textColor;
   final Color color;
+  final ShapeBorder shape;
 
   final Widget icon;
   final Widget child;
@@ -396,7 +453,7 @@ abstract class _FancyButton extends StatelessWidget {
   @nonVirtual
   Widget build(BuildContext context) {
     if (isLoading) {
-      return _buildIcon(context, _LoadingIndicator(loadingIndicatorSize));
+      return _buildIcon(context, actualLoadingIndicator);
     }
     if (icon != null) {
       return _buildIcon(context, icon);

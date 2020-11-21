@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
 <!-- Template:
@@ -16,7 +16,36 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.12...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.15...master)
+
+
+## [0.2.15](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.14...v0.2.15) · 2020-10-16
+
+### 🎉 New Features
+- **bottom_sheet:** export DragIndicator
+
+### 🐛 Bug Fixes
+- **bottom_sheet:** expand content to fill cross axis
+
+
+## [0.2.14](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.13...v0.2.14) · 2020-10-01
+
+### 🎉 New Features
+- **widgets/buttons:** add customizable `loadingIndicator`
+- **widgets/buttons:** allow reversing extended FAB's child order (to show the icon on the right)
+
+### ⚡ Changes
+- **widgets/buttons:** choose disabled FAB's foreground color based on the background color
+
+
+## [0.2.13](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.12...v0.2.13) · 2020-08-20
+
+### 🎉 New Features
+- **widgets/buttons:** add `shape` parameter
+
+### 📦 Build & CI
+- update <kbd>dartx</kbd> to `^0.5.0`
+
 
 ## [0.2.12](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.11...v0.2.12) · 2020-06-11
 
@@ -24,8 +53,8 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 - **context:** add `BuildContext.focusScope`
 
 ### 📦 Build & CI
-- update dartx to v0.4.0
-- update Flutter to v1.17.0
+- update <kbd>dartx</kbd> to `^0.4.0`
+- update <kbd>Flutter</kbd> to `>=1.17.0`
 
 
 ## [0.2.11](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.10...v0.2.11) · 2020-05-18
@@ -45,7 +74,7 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 - **widgets:** add `TitleAndSubtitle`
 
 ### 📦 Build & CI
-- update <kbd>dartx</kbd> to ^0.3.0
+- update <kbd>dartx</kbd> to `^0.3.0`
 
 
 ## [0.2.9](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.8...v0.2.9) · 2020-04-29
@@ -92,17 +121,17 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ## [0.2.4](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.3...v0.2.4) · 2020-04-02
 
 ### 🐛 Bug Fixes
-- **buttons:** use default child for extended buttons while not loading
+- **widgets/buttons:** use default child for extended buttons while not loading
 
 
 ## [0.2.3](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.2...v0.2.3) · 2020-03-28
 
 ### 🎉 New Features
-- **buttons:** add `icon`-variants to `FancyFlatButton`, `FancyOutlineButton` & `FancyRaisedButton`
-- **buttons:** add `textColor` to all fancy buttons
-- **buttons:** add `FancyOutlineButton.borderSide`, `FancyOutlineButton.highlightedBorderColor`
 - **color:** add `Color.withAdditionalOpacity`, `Color.withAdditionalAlpha`
 - **color:** add `contrastSystemUiOverlayStyle` getters to `Brightness`, `Color`
+- **widgets/buttons:** add `icon`-variants to `FancyFlatButton`, `FancyOutlineButton` & `FancyRaisedButton`
+- **widgets/buttons:** add `textColor` to all fancy buttons
+- **widgets/buttons:** add `FancyOutlineButton.borderSide`, `FancyOutlineButton.highlightedBorderColor`
 
 
 ## [0.2.2](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.1...v0.2.2) · 2020-03-26
